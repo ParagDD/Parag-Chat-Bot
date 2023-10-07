@@ -5,6 +5,16 @@ import numpy as np
 from transformers import AutoTokenizer, AutoModel
 from youtube_transcript_api import YouTubeTranscriptApi
 
+import streamlit as st
+
+# Load and inject custom CSS
+def load_custom_css():
+    custom_css = open("custom.css", "r").read()
+    st.markdown(f"<style>{custom_css}</style>", unsafe_allow_html=True)
+
+# Call the function to inject custom CSS
+load_custom_css()
+
 # Define a Streamlit title
 st.title("YouTube Transcript Search")
 
