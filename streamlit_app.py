@@ -14,7 +14,7 @@ st.markdown(
     """
     <style>
     /* Hide the GitHub logo */
-    .stActionButton {
+    .st-emotion-cache-1p1m4ay.e3g6aar0 {
         display: none !important;
     }
     </style>
