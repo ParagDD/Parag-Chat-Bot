@@ -7,10 +7,23 @@ from youtube_transcript_api import YouTubeTranscriptApi
 
 import streamlit as st
 
-# Load and inject custom CSS
-def load_custom_css():
-    custom_css = open("custom.css", "r").read()
-    st.markdown(f"<style>{custom_css}</style>", unsafe_allow_html=True)
+import streamlit as st
+
+# Inject custom CSS to hide the GitHub logo
+st.markdown(
+    """
+    <style>
+    /* Hide the GitHub logo */
+    .stActionButton {
+        display: none !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Your Streamlit app code here...
+
 
 # Call the function to inject custom CSS
 load_custom_css()
