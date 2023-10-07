@@ -7,8 +7,6 @@ from youtube_transcript_api import YouTubeTranscriptApi
 
 import streamlit as st
 
-import streamlit as st
-
 # Inject custom CSS to hide the GitHub logo
 st.markdown(
     """
@@ -22,11 +20,15 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+
+
+
+
 # Your Streamlit app code here...
 
 
-# Call the function to inject custom CSS
-load_custom_css()
+
+
 
 # Define a Streamlit title
 st.title("YouTube Transcript Search")
