@@ -2,11 +2,10 @@ import streamlit as st
 import torch
 import faiss
 import numpy as np
-from app import retrieve_answer
-
 from transformers import AutoTokenizer, AutoModel
 from youtube_transcript_api import YouTubeTranscriptApi
 
+# Define a Streamlit title
 st.title("YouTube Transcript Search")
 
 # Load the model and tokenizer from Hugging Face Transformers
@@ -17,17 +16,7 @@ model = AutoModel.from_pretrained(model_name)
 # Define a global variable for storing the FAISS index
 faiss_index = None
 
-# User input for question and video URL
-query = st.text_input("Enter your question:")
-video_url = st.text_input("Enter the YouTube video URL:")
-
-# Retrieve answer when user clicks the "Search" button
-if st.button("Search"):
-    if query and video_url:
-        answer = retrieve_answer(query, video_url)
-        st.header("Retrieved Answer:")
-        st.write(answer)
-
+# Define a function to retrieve answers
 def retrieve_answer(question, video_url):
     global faiss_index
 
@@ -72,3 +61,20 @@ def retrieve_answer(question, video_url):
     similar_doc = chunks[similar_doc_index]
 
     return similar_doc
+
+# Define a Streamlit sidebar with user input fields
+st.sidebar.title("User Input")
+query = st.sidebar.text_input("Enter your question:")
+video_url = st.sidebar.text_input("Enter the YouTube video URL:")
+
+# Create a placeholder for displaying retrieved answers
+answer_placeholder = st.empty()
+
+# Check if user input exists
+if query and video_url:
+    # Retrieve and display the answer when the user clicks the "Search" button
+    if st.sidebar.button("Search"):
+        answer = retrieve_answer(query, video_url)
+        # Display the retrieved answer
+        answer_placeholder.header("Retrieved Answer:")
+        answer_placeholder.write(answer)
