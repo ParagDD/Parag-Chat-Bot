@@ -1,0 +1,27 @@
+# Virtual environment
+venv/
+myenv/
+
+# Large binary files
+*.dll
+*.lib
+*.exe
+
+# Logs and databases
+*.log
+*.sql
+db.sqlite3
+
+# Compiled files
+*.pyc
+*.pyo
+*.pyd
+
+# Dependency directories
+lib/
+lib64/
+__pycache__/
+
+# Miscellaneous
+*.swp
+.DS_Store

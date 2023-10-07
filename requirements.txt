@@ -1,0 +1,21 @@
+pydub
+SpeechRecognition
+gTTS
+openai
+langchain
+tiktoken==0.5.1
+unstructured
+llm
+transformers
+numpy
+faiss-cpu
+google-api-python-client
+srt
+pytube
+flask
+youtube_transcript_api
+transformers
+torch
+streamlit
+inotify
+-e .
